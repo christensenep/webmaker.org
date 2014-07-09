@@ -345,7 +345,7 @@ angular
         return reviewItems;
       }
 
-      var ReviewApplicationController = function ($scope, $modalInstance, application) {
+      var ReviewApplicationController = [ "$scope", "$modalInstance", "application", function ($scope, $modalInstance, application) {
         $scope.review = {
           id: application.slug,
           email: application.learner
@@ -358,7 +358,7 @@ angular
         $scope.cancel = function () {
           $modalInstance.dismiss('cancel');
         };
-      };
+      }];
 
       // On load, Get all instances
       $http
