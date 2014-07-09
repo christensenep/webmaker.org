@@ -345,20 +345,22 @@ angular
         return reviewItems;
       }
 
-      var ReviewApplicationController = [ "$scope", "$modalInstance", "application", function ($scope, $modalInstance, application) {
-        $scope.review = {
-          id: application.slug,
-          email: application.learner
-        };
-        $scope.application = application;
-        $scope.ok = function () {
-          $modalInstance.close($scope.review);
-        };
+      var ReviewApplicationController = ["$scope", "$modalInstance", "application",
+        function ($scope, $modalInstance, application) {
+          $scope.review = {
+            id: application.slug,
+            email: application.learner
+          };
+          $scope.application = application;
+          $scope.ok = function () {
+            $modalInstance.close($scope.review);
+          };
 
-        $scope.cancel = function () {
-          $modalInstance.dismiss('cancel');
-        };
-      }];
+          $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+          };
+        }
+      ];
 
       // On load, Get all instances
       $http
